@@ -19,7 +19,7 @@ docker compose up --build
 assim ele irá subir o front-end no seu localhost na porta 4200 que você poderá estar acessando em http://localhost:4200/login para iniciar o processo de teste do projeto
 
 dump mysql:
-
+```sql
 INSERT INTO gymesc.USER (ID, CREATE_DATE, DELETED, LAST_EDIT, EMAIL, FEDERAL_IDENTIFICATION, HEIGHT, NAME, PASSWORD, PHONE_NUMBER, WEIGHT, WORKOUT_LEVEL) VALUES (1, '2024-09-29 21:07:54.896430', false, '2024-09-29 21:07:54.896430', 'admin@admin.com', null, 100, 'admin', 'X/JbuxPCmeY=', null, 100, 'BEGINNER');
 
 INSERT INTO gymesc.WORKOUT (ID, CREATE_DATE, DELETED, LAST_EDIT, DESCRIPTION, BASE_DURATION, NAME, SCALING_RULE, WORKOUT_LEVEL, USER_ID) VALUES (1, '2024-09-29 21:20:27.310991', false, '2024-09-29 21:20:27.310991', 'Um treino de alta intensidade com exercícios aeróbicos como burpees, polichinelos e corrida estacionária para aumentar a frequência cardíaca e queimar calorias.', 35, 'Cardio Explosivo', null, 'BEGINNER', 1);
@@ -56,7 +56,7 @@ INSERT INTO gymesc.WORKOUT_EXERCISE (WORKOUT_ID, EXERCISE_ID) VALUES (2, 9);
 INSERT INTO gymesc.WORKOUT_EXERCISE (WORKOUT_ID, EXERCISE_ID) VALUES (3, 3);
 INSERT INTO gymesc.WORKOUT_EXERCISE (WORKOUT_ID, EXERCISE_ID) VALUES (3, 8);
 INSERT INTO gymesc.WORKOUT_EXERCISE (WORKOUT_ID, EXERCISE_ID) VALUES (3, 10);
-
+```
 
 pra fazer login no site:
 email: admin@admin.com
