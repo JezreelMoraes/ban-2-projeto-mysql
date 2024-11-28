@@ -1,0 +1,61 @@
+<app-container>
+    <ng-container slot="title">CADASTRE-SE</ng-container>
+    <app-form>
+        <div class="columns">
+            <div class="col">
+                <label for="name">Nome</label>
+                <input required type="text" id="name" name="name" placeholder="Nome"
+                       [(ngModel)]="registerData.name"
+                >
+
+                <label for="weight">Peso (Kg)</label>
+                <input required type="text" id="weight" name="weight" placeholder="Peso (Kg)"
+                       [(ngModel)]="registerData.weight"
+                >
+
+                <label for="height">Altura (cm)</label>
+                <input required type="text" id="height" name="height" placeholder="Altura (cm)"
+                       [(ngModel)]="registerData.height"
+                >
+
+                <label for="workout_level">Nivel de treino</label>
+                <select required name="workoutLevelEnum" id="workout_level"
+                        [(ngModel)]="registerData.workoutLevelEnum"
+                >
+                    <option value="undefined" disabled selected>Selecione uma opção</option>
+                    <option value="BEGINNER">Iniciante</option>
+                    <option value="INTERMEDIATE">Intermediário</option>
+                    <option value="ADVANCED">Avançado</option>
+                    <option value="PROFESSIONAL">Especialista</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="email">Email</label>
+                <input required type="text" id="email" name="email" placeholder="Email"
+                       [(ngModel)]="registerData.email"
+                >
+
+                <label for="password">Senha</label>
+                <input required type="password" id="password" name="password" placeholder="Senha"
+                       [(ngModel)]="registerData.password"
+                >
+
+                <label for="re_password">Repita a senha</label>
+                <input required type="password" id="re_password" name="rePassword" placeholder="Repita a senha"
+                       [(ngModel)]="registerData.rePassword"
+                >
+            </div>
+        </div>
+
+        <button type="button" (click)="doCreateUser()">
+            CADASTRAR-SE
+        </button>
+    </app-form>
+    <ng-container slot="footer">
+        <span class="details">
+            Já tem um cadastro?
+            <a routerLink="/login">Faça login!</a>
+        </span>
+    </ng-container>
+</app-container>
+<app-logo></app-logo>

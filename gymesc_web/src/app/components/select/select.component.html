@@ -1,0 +1,10 @@
+<input list="items" placeholder="Digite ou escolha uma opção"
+       [(ngModel)]="value"
+       (input)="onInput(value)"
+/>
+
+<datalist id="items">
+    @for ( item of dataList; track item ) {
+        <option [value]="item[this.listItemConfig.value]"></option>
+    }
+</datalist>

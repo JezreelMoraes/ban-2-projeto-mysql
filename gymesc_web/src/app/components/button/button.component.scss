@@ -1,0 +1,77 @@
+@import "colors";
+
+:host, :host(*) {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+
+    outline: .1rem solid $button-green-color;
+    color: $button-font-light-color;
+
+    font-size: 1.5rem;
+
+    &.no-wrap {
+        text-wrap: nowrap;
+
+        span {
+            width: 100%;
+            text-wrap: nowrap;
+        }
+    }
+
+    .icon.black {
+        display: none;
+    }
+
+    &.red {
+        outline: .1rem solid $red-color;
+
+        &:hover .icon {
+            display: block;
+
+            &.black {
+                display: none;
+            }
+        }
+
+        &:hover {
+            background-color: $red-color;
+            box-shadow: 0 0 1rem rgb(255, 120, 96);
+            color: $button-font-light-color;
+        }
+    }
+
+    &:hover {
+        background-color: $button-green-color;
+        box-shadow: 0 0 1rem $button-green-color;
+        color: $button-font-dark-color;
+
+        .icon {
+            display: none;
+
+            &.black {
+                display: block;
+            }
+        }
+    }
+
+    &.active {
+        background-color: $button-green-color;
+        box-shadow: 0 0 1rem $button-green-color;
+        color: $button-font-dark-color;
+
+        .icon {
+            display: none;
+
+            &.black {
+                display: block;
+            }
+        }
+    }
+}

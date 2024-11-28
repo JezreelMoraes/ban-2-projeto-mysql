@@ -1,0 +1,15 @@
+@import "colors";
+
+:host, :host(*) {
+    max-width: 60rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+
+    app-container {
+        margin-bottom: 2rem;
+    }
+}

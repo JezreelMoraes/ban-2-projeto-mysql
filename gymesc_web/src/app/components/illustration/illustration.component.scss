@@ -1,0 +1,55 @@
+@import "colors";
+
+:host, :host(*) {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h1 {
+            font-size: 2.8rem;
+        }
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            max-width: 50rem;
+            height: auto;
+        }
+    }
+
+    footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    &.title-align-left {
+        header {
+            text-align: left;
+            width: 100%;
+        }
+    }
+
+    &.description-align-left {
+        footer {
+            width: 100%;
+            justify-content: left;
+        }
+    }
+}
+

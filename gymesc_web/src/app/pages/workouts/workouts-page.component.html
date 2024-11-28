@@ -1,0 +1,40 @@
+<app-container class="full main-center" [hasHeader]="true">
+    <ng-container slot="breadcrumb">
+        <app-breadcrumb pageName="Treinos">
+            <app-breadcrumb-item>Treinos</app-breadcrumb-item>
+        </app-breadcrumb>
+    </ng-container>
+    <ng-container slot="header">
+        <app-button iconName="plus" iconAlt="criar" label="Criar treino" class="no-wrap" routerLink="/app/workouts/add"></app-button>
+    </ng-container>
+
+    @if (workoutList && workoutList.length) {
+        <app-list>
+            @for ( workout of workoutList; track workout) {
+                <app-list-item
+                    [imageUrl]="workout.name"
+                    [title]="workout.name"
+                    [description]="workout.description"
+                    (onEdit)="editWorkout(workout)"
+                    (onDelete)="deleteWorkout(workout)"
+                ></app-list-item>
+            }
+        </app-list>
+    } @else {
+        <app-illustration
+            illustration="people_watching_while_eat_popcorn_on_sofa"
+            alt="Pessoas assistinfo enquanto comem pipoca em um sofá"
+        >
+            <ng-container slot="title">
+                Nenhum <span class="green">treino</span> encontrado
+            </ng-container>
+            <ng-container slot="description">
+                Adicione
+                <span class="green">treinos</span>
+                agora mesmo clicando no botão
+                <span class="green">"Adicionar treino"</span>
+                logo acima.
+            </ng-container>
+        </app-illustration>
+    }
+</app-container>

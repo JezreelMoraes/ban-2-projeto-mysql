@@ -1,0 +1,36 @@
+@import "colors";
+
+:host, :host(*) {
+    display: flex;
+    flex-direction: column;
+
+    .breadcrumb-items-container {
+        display: flex;
+        align-items: center;
+
+        ::ng-deep app-breadcrumb-item {
+            &+ app-breadcrumb-item::before {
+                content: "🡢";
+                padding: .5rem;
+            }
+
+            &:last-child {
+                font-weight: bold;
+                color: $green-color;
+
+                &::before {
+                    content: none;
+                }
+            }
+
+            &:nth-last-child(2)::after {
+                content: "🡢";
+                padding: .5rem;
+            }
+        }
+    }
+
+    .page-name {
+        font-size: 2rem;
+    }
+}

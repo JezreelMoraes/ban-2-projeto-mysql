@@ -1,0 +1,43 @@
+<app-container class="full main-center" [hasHeader]="true">
+    <ng-container slot="breadcrumb">
+        <app-breadcrumb pageName="Exercícios">
+            <app-breadcrumb-item>Exercícios</app-breadcrumb-item>
+        </app-breadcrumb>
+    </ng-container>
+    <ng-container slot="header">
+        <app-button iconName="plus" iconAlt="criar" label="Criar exercício" class="no-wrap"
+            routerLink="/app/exercises/add"
+        ></app-button>
+    </ng-container>
+
+    @if (exerciseList && exerciseList.length) {
+        <app-list>
+            @for ( exercise of exerciseList; track exercise) {
+                <app-list-item
+                    [imageUrl]="exercise.name"
+                    [title]="exercise.name"
+                    [description]="exercise.description"
+                    (onEdit)="editExercise(exercise)"
+                    (onDelete)="deleteExercise(exercise)"
+                ></app-list-item>
+            }
+        </app-list>
+    } @else {
+        <app-illustration
+            illustration="people_watching_while_eat_popcorn_on_sofa"
+            alt="Pessoas assistinfo enquanto comem pipoca em um sofá"
+        >
+            <ng-container slot="title">
+                Nenhum <span class="green">exercício</span> encontrado
+            </ng-container>
+            <ng-container slot="description">
+                Adicione
+                <span class="green">exercícios</span>
+                agora mesmo clicando no botão
+                <span class="green">"Adicionar exercício"</span>
+                logo acima.
+            </ng-container>
+        </app-illustration>
+    }
+
+</app-container>

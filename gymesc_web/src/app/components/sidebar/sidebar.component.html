@@ -1,0 +1,15 @@
+<app-container class="full" [hasHeader]="true">
+    <ng-container slot="header">
+        <app-logo></app-logo>
+    </ng-container>
+
+    <div class="activities-container">
+        <app-button routerLink="/app/workouts" routerLinkActive="active" iconName="workout" iconAlt="gym weigh" label="Treinos"></app-button>
+        <app-button routerLink="/app/exercises" routerLinkActive="active" iconName="weight" iconAlt="gym weigh" label="Exercícios"></app-button>
+    </div>
+
+    <ng-container slot="footer">
+        <app-button routerLink="/app/settings" routerLinkActive="active" iconName="gear" iconAlt="gear" label="Configurações"></app-button>
+        <app-button iconName="exit" iconAlt="exit" label="Sair" class="red" (click)="logout()"></app-button>
+    </ng-container>
+</app-container>

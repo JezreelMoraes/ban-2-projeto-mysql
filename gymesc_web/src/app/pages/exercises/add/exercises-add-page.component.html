@@ -1,0 +1,54 @@
+<app-container class="full main-center">
+    <ng-container slot="breadcrumb">
+        <app-breadcrumb pageName="Criar exercício">
+            <app-breadcrumb-item>Exercícios</app-breadcrumb-item>
+            <app-breadcrumb-item>Criar exercício</app-breadcrumb-item>
+        </app-breadcrumb>
+    </ng-container>
+
+    <app-form (keyup.enter)="doCreateExercise()" >
+        <div class="columns">
+            <div class="col">
+                <label for="name">Nome do exercício</label>
+                <input required type="text" id="name" name="name" placeholder="Nome do exercício"
+                    [(ngModel)]="exerciseData.name"
+                >
+
+                <label for="category">Categoria do execício</label>
+                <app-select id="category"
+                    [(ngModel)]="exerciseData.category"
+                    [dataList]="categoryList"
+                    [listItemConfig]="listItemConfig"
+                    [buildDefaultItem]="CategoryModel.buildDefault"
+                ></app-select>
+
+                <label for="exercise_type">Tipo de exercício</label>
+                <select required name="exerciseTypeEnum" id="exercise_type"
+                    [(ngModel)]="exerciseData.exerciseTypeEnum"
+                >
+                    <option value="undefined" disabled selected>Selecione uma opção</option>
+                    <option value="REPETITION">Repetições</option>
+                    <option value="DURATION">Duração</option>
+                </select>
+
+                <label for="description">Descrição</label>
+                <textarea name="description" class="no-mb" id="description" placeholder="Descrição"
+                    [(ngModel)]="exerciseData.description"
+                ></textarea>
+            </div>
+            <div class="col">
+                <label for="image">Imagem</label>
+                <label for="image" class="input-file-holder no-mb js-input-file-wrapper">
+                    <img src="assets/icons/img.svg" class="hover" alt="img file">
+                    <img src="assets/icons/img-deactivate.svg" alt="img file">
+                    <input type="file" name="image" id="image" accept="image/*"
+                           class="hide js-input-file">
+                </label>
+            </div>
+        </div>
+        <ng-container slot="footer">
+            <button routerLink="/app/exercises" type="button" class="red">VOLTAR</button>
+            <button type="button" (click)="doCreateExercise()" >CRIAR</button>
+        </ng-container>
+    </app-form>
+</app-container>

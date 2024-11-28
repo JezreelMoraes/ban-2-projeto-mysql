@@ -1,0 +1,19 @@
+<header>
+    <ng-content select="[slot='breadcrumb']"></ng-content>
+
+    @if (hasHeader) {
+        <ng-content select="[slot='header']"></ng-content>
+    } @else {
+        <h1>
+            <ng-content select="[slot='title']"></ng-content>
+        </h1>
+    }
+</header>
+
+<main>
+    <ng-content></ng-content>
+</main>
+
+<footer>
+    <ng-content select="[slot='footer']"></ng-content>
+</footer>

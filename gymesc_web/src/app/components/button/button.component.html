@@ -1,0 +1,12 @@
+@if (iconName) {
+    <img src="/assets/icons/{{ iconName }}.svg" alt="{{ iconAlt }}" class="icon">
+    <img src="/assets/icons/{{ iconName }}_black.svg" alt="{{ iconAlt }}" class="icon black">
+}
+
+<span>
+    @if (label) {
+        {{ label }}
+    } @else {
+        <ng-content></ng-content>
+    }
+</span>

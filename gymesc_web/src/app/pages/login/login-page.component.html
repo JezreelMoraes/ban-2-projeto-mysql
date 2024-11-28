@@ -1,0 +1,38 @@
+<div class="login" (keyup.enter)="doLogin()" >
+    <app-illustration
+        illustration="woman_exercising_following_app_instructions"
+        alt="Mulher fazendo exercícios seguindo orientação de aplicativo"
+        class="title-align-left description-align-left"
+    >
+        <ng-container slot="title">
+            Faça <span class="green">login</span><br>e entre para o <span class="green">nosso time</span>
+        </ng-container>
+        <ng-container slot="description">
+            <app-logo></app-logo>
+        </ng-container>
+    </app-illustration>
+    <app-container class="login-form-container">
+        <ng-container slot="title">LOGIN</ng-container>
+        <app-form>
+            <label for="username">Email</label>
+            <input type="text" id="username" autocomplete="true" class="js-username small" name="username" placeholder="Email"
+                [(ngModel)]="loginData.email"
+            >
+
+            <label for="password">Senha</label>
+            <input type="password" autocomplete="true" class="js-password small" id="password" name="password" placeholder="Senha"
+                [(ngModel)]="loginData.password"
+            >
+
+            <button type="button" (click)="doLogin()">
+                LOGIN
+            </button>
+        </app-form>
+        <ng-container slot="footer">
+            <span class="details">
+                É novo aqui?
+                <a routerLink="/register">Cadastre-se</a>
+            </span>
+        </ng-container>
+    </app-container>
+</div>

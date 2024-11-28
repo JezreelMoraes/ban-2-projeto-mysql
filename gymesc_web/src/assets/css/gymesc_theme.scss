@@ -1,0 +1,118 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$green-palette: (
+    50: #00e68a,
+    100: #00e68a,
+    200: #00e68a,
+    300: #00e68a,
+    400: #00e68a,
+    500: #00e68a,
+    600: #00e68a,
+    700: #00e68a,
+    800: #00e68a,
+    900: #00e68a,
+    A100: #00e68a,
+    A200: #00e68a,
+    A400: #00e68a,
+    A700: #00e68a,
+    contrast: (
+        50: #282845,
+        100: #282845,
+        200: #282845,
+        300: #282845,
+        400: #282845,
+        500: #282845,
+        600: #282845,
+        700: #282845,
+        800: #282845,
+        900: #282845,
+        A100: #282845,
+        A200: #282845,
+        A400: #282845,
+        A700: #282845,
+    )
+);
+
+$dark-purple-palette: (
+    50: #1F1F3D,
+    100: #1F1F3D,
+    200: #1F1F3D,
+    300: #1F1F3D,
+    400: #1F1F3D,
+    500: #1F1F3D,
+    600: #1F1F3D,
+    700: #1F1F3D,
+    800: #1F1F3D,
+    900: #1F1F3D,
+    A100: #1F1F3D,
+    A200: #1F1F3D,
+    A400: #1F1F3D,
+    A700: #1F1F3D,
+    contrast: (
+        50: white,
+        100: white,
+        200: white,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: white,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
+
+$red-palette: (
+    50: #ff6347,
+    100: #ff6347,
+    200: #ff6347,
+    300: #ff6347,
+    400: #ff6347,
+    500: #ff6347,
+    600: #ff6347,
+    700: #ff6347,
+    800: #ff6347,
+    900: #ff6347,
+    A100: #ff6347,
+    A200: #ff6347,
+    A400: #ff6347,
+    A700: #ff6347,
+    contrast: (
+        50: white,
+        100: white,
+        200: white,
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: white,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
+
+$gymesc-primary: mat.define-palette($green-palette);
+$gymesc-accent: mat.define-palette($dark-purple-palette, A200, A100, A400);
+$gymesc-warn: mat.define-palette($red-palette);
+
+$gymesc-theme: mat.define-dark-theme((
+    color: (
+        primary: $gymesc-primary,
+        accent: $gymesc-accent,
+        warn: $gymesc-warn,
+    ),
+    typography: mat.define-typography-config($font-family: "Open Sans"),
+    density: 0
+));
+
+@include mat.all-component-themes($gymesc-theme);

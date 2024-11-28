@@ -1,0 +1,23 @@
+<header>
+    <h1>
+        @if (title) {
+            {{ title }}
+        } @else {
+            <ng-content select="[slot='title']"></ng-content>
+        }
+    </h1>
+</header>
+
+<main>
+    <img src="assets/illustration/{{ illustration }}.{{ illustrationExtension }}" alt="{{ alt }}">
+</main>
+
+<footer>
+    <span>
+        @if (description) {
+            {{ description }}
+        } @else {
+            <ng-content select="[slot='description']"></ng-content>
+        }
+    </span>
+</footer>

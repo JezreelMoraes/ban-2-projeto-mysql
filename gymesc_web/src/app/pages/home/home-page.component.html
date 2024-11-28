@@ -1,0 +1,16 @@
+<app-container class="full main-center" [hasHeader]="true">
+    <ng-container slot="breadcrumb">
+        <app-breadcrumb pageName="Menu principal">
+            <app-breadcrumb-item>Menu principal</app-breadcrumb-item>
+        </app-breadcrumb>
+    </ng-container>
+
+    <app-illustration
+        illustration="people_talking_while_training"
+        alt="Ilustração de uma mulher e um homem conversando enquanto treinam"
+    >
+        <ng-container slot="title">
+            Preparado para o <span class="green">treino</span>?
+        </ng-container>
+    </app-illustration>
+</app-container>

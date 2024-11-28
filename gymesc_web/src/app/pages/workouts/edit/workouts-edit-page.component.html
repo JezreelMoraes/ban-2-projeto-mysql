@@ -1,0 +1,44 @@
+<app-container class="full main-center">
+    <ng-container slot="breadcrumb">
+        <app-breadcrumb pageName="Editar treino">
+            <app-breadcrumb-item>Treinos</app-breadcrumb-item>
+            <app-breadcrumb-item>Editar treino</app-breadcrumb-item>
+        </app-breadcrumb>
+    </ng-container>
+
+    <app-form (keyup.enter)="doUpdateWorkout()">
+        <div class="columns">
+            <div class="col">
+                <label for="name">Nome do treino</label>
+                <input required type="text" id="name" name="name" placeholder="Nome do treino" [(ngModel)]="workoutData.name">
+
+                <label for="duration">Duração do treino (em minutos)</label>
+                <input required type="text" id="duration" name="duration" placeholder="Tempo do treino" [(ngModel)]="workoutData.duration">
+
+                <label for="exerciseList">Exercícios</label>
+                <ng-multiselect-dropdown
+                    id="exerciseList"
+                    [placeholder]="'Selecione os exercícios'"
+                    [data]="exerciseList"
+                    [(ngModel)]="workoutData.exerciseList"
+                    [settings]="dropdownSettings">
+                </ng-multiselect-dropdown>
+
+                <label for="description">Descrição</label>
+                <textarea name="description" class="no-mb" id="description" placeholder="Descrição" [(ngModel)]="workoutData.description"></textarea>
+            </div>
+            <div class="col">
+                <label for="image">Imagem</label>
+                <label for="image" class="input-file-holder no-mb js-input-file-wrapper">
+                    <img src="assets/icons/img.svg" class="hover" alt="img file">
+                    <img src="assets/icons/img-deactivate.svg" alt="img file">
+                    <input type="file" name="image" id="image" accept="image/*" class="hide js-input-file">
+                </label>
+            </div>
+        </div>
+        <ng-container slot="footer">
+            <button routerLink="/app/workouts" type="button" class="red">VOLTAR</button>
+            <button type="button" (click)="doUpdateWorkout()">EDITAR</button>
+        </ng-container>
+    </app-form>
+</app-container>

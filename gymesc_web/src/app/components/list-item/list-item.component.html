@@ -1,0 +1,23 @@
+<header class="illustration" *ngIf="imageUrl">
+    <img src="assets/img/logo.png" alt="">
+</header>
+
+<main class="content">
+    <h1 class="title">
+        {{ title }}
+    </h1>
+    <p class="description">
+        {{ description }}
+    </p>
+</main>
+
+<footer>
+    <aside class="actions">
+        <button (click)="onEdit.emit()" aria-label="Editar">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="onDelete.emit()" aria-label="Deletar">
+            <mat-icon class="red">delete</mat-icon>
+        </button>
+    </aside>
+</footer>

@@ -1,0 +1,330 @@
+@import "colors";
+
+:host, :host(*) {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    form {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+
+        main {
+            height: 100%;
+        }
+
+        footer {
+            display: flex;
+            gap: 1rem;
+            max-height: 10rem;
+            justify-content: space-between;
+
+            ::ng-deep {
+                button {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+
+    ::ng-deep {
+        label {
+            font-size: 1.5rem;
+            color: $label-light-color;
+        }
+
+        label + label,
+        label + input,
+        label + select,
+        label + textarea,
+        label + button,
+        label + app-select,
+        label + ng-multiselect-dropdown {
+            margin-top: .5rem;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            background-color: $input-bg-color;
+            color: $input-font-active-color;
+            font-size: 1.5rem;
+
+            margin-bottom: 2rem;
+            padding: 1rem;
+
+            border-radius: .5rem;
+            border: none;
+
+            min-width: 20rem;
+            width: 100%;
+        }
+
+        button {
+            margin-bottom: 0;
+        }
+
+        textarea {
+            resize: none;
+            max-height: 20rem;
+            height: 20rem;
+        }
+
+        select:invalid,
+        select.ng-invalid {
+            color: $input-font-placeholder-color;
+        }
+
+        option {
+            color: $input-font-active-color;
+
+            &:disabled {
+                color: $input-font-placeholder-color;
+            }
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: $input-font-placeholder-color;
+        }
+
+        button {
+            border-radius: .5rem;
+            background-color: $button-green-color;
+            color: $button-font-dark-color;
+
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 1rem $button-green-color;
+
+            margin-top: 1rem;
+
+            &:hover {
+                background-color: $button-hover-green-color;
+            }
+
+            &:active {
+                background-color: $button-click-green-color;
+                box-shadow: none;
+            }
+
+            &.red {
+                background-color: $red-color;
+                color: $white-color;
+                box-shadow: 0 0 1rem $red-color;
+            }
+
+            &.red:hover {
+                background-color: $button-hover-red-color;
+            }
+
+            &.red:active {
+                background-color: $button-click-red-color;
+                box-shadow: none;
+            }
+        }
+
+        .no-mb {
+            margin-bottom: 0;
+        }
+
+        .input-file-holder {
+            width: 100%;
+            height: 100%;
+
+            -webkit-filter: brightness(100%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: $input-bg-color;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            color: $input-font-active-color;
+            font-size: 1.5rem;
+
+            padding: 1rem;
+
+            border-radius: .5rem;
+            border: none;
+
+            cursor: pointer;
+
+            &:hover > img {
+                display: none;
+            }
+
+            &:hover > img.hover {
+                display: block;
+            }
+
+            &.filled img {
+                display: none;
+            }
+
+            &.filled img.hover {
+                width: 11rem;
+                height: 11rem;
+
+                display: block;
+                border-radius: .5rem;
+                padding: 1rem;
+                background-color: #0000005e;
+            }
+
+            img {
+                width: 10rem;
+                height: 10rem;
+            }
+
+            .hover {
+                display: none;
+            }
+        }
+
+        ng-multiselect-dropdown {
+            background-color: $input-bg-color;
+            color: $input-font-active-color;
+            font-size: 1.5rem;
+
+            margin-bottom: 2rem;
+            border-radius: .5rem;
+
+            min-width: 20rem;
+            width: 100%;
+
+            &::ng-deep {
+                .dropdown-btn {
+                    padding: 1rem !important;
+                    border: none !important;
+                    display: flex !important;
+                    flex-wrap: wrap;
+                    gap: 1rem !important;
+
+                    span {
+                        color: $input-font-placeholder-color !important;
+                    }
+
+                    .selected-item-container {
+                        margin: 0 !important;
+                        padding: 0 !important;
+
+                        span {
+                            color: $button-font-dark-color !important;
+                            padding: .5rem .5rem !important;
+                            max-width: 20rem;
+                            max-height: 3rem;
+                            overflow: hidden;
+                        }
+
+                        .selected-item {
+                            margin: 0 !important;
+                            padding: 0 !important;
+
+                            background-color: $green-color !important;
+                            color: $button-font-dark-color !important;
+                            border-color: $green-color !important;
+
+                            a {
+                                color: $button-font-dark-color !important;
+                            }
+                        }
+                    }
+
+                    .selected-item-container:nth-child(n+4) {
+                        display: none !important;
+                    }
+                }
+
+                .dropdown-list {
+                    margin-bottom: 2rem !important;
+                    background-color: $input-bg-color !important;
+                    color: $input-font-active-color !important;
+                    border: none;
+                    box-shadow: none;
+                    padding: 0;
+                    overflow: hidden !important;
+
+                    div {
+                        color: $input-font-active-color !important;
+                    }
+
+                    li {
+                        &.multiselect-item-checkbox {
+                            div::before {
+                                border-color: $green-color !important;
+                            }
+
+                            input[type="checkbox"] {
+                                &:checked + div::before {
+                                    background-color: $green-color !important;
+                                    border-color: $green-color !important;
+                                }
+
+                                &:checked + div::after {
+                                    border-color: $white-color !important;
+                                }
+                            }
+                        }
+
+                        &.filter-textbox {
+                            display: flex !important;
+                            flex-direction: column !important;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 !important;
+
+                            input {
+                                margin: 0;
+                                border: none;
+                                border-radius: 0;
+                                padding: 1rem !important;
+
+                                width: 100%;
+                                height: 100%;
+
+                                &::placeholder {
+                                    color: $input-font-active-color !important;
+                                }
+                            }
+                        }
+                    }
+
+                    li:hover {
+                        &.multiselect-item-checkbox {
+                            div::before {
+                                border-color: $white-color !important;
+                            }
+
+                            input[type="checkbox"] {
+                                &:checked + div::before {
+                                    background-color: $white-color !important;
+                                    border-color: $white-color !important;
+                                }
+
+                                &:checked + div::after {
+                                    border-color: $green-color !important;
+                                }
+                            }
+                        }
+
+                        background-color: $green-color;
+
+                        div {
+                            color: $button-font-dark-color !important;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
