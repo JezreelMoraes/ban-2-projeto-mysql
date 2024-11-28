@@ -1,26 +1,22 @@
-Boa noite professora, esse readme é para leh explicar em detalhes como você pode rodar esse projeto
+Oi professora
+O nosso projeto é separado em 2 pastas:
 
-ele é separado em 2 pastas
+o gymesc_core é a parte da Api, para subi-la você precisa ter o docker instalado, daí basta você acessar essa pasta pelo terminal e rodar o comando:
 
-
-
-o gymesc_core é a parte da Api, para subi-la você precisa ter o docker instalado corretamente, daí basta você acessar essa pasta pelo terminal e rodar o comando:
-
+```sh
 docker compose up --build
+```
 
 assim ele irá subir a aplicação no seu localhost na porta 8080 e seu banco de dados mysql na porta 3306 cujos dados de autenticação é "root" e a senha "master"
 
 
-
 no gymesc_web é onde fica o front-end do projeto, ele é feito em angular 17 e para roda-lo você também precisa acessar essa pasta pelo terminal e rodar o comando:
 
+```sh
 docker compose up --build
+```
 
 assim ele irá subir o front-end no seu localhost na porta 4200 que você poderá estar acessando em http://localhost:4200/login para iniciar o processo de teste do projeto
-
-
-
-talvez o comando demore devido as várias dependencias necessárias, mas peço pela sua paciência prof
 
 dump mysql:
 
