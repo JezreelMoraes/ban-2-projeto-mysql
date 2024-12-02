@@ -1,4 +1,5 @@
-Oi professora
+Oi professora, o projeto conceitual e logico, assim como o video pode ser acesso no arquivo trabalho.pdf
+
 O nosso projeto é separado em 2 pastas:
 
 o gymesc_core é a parte da Api, para subi-la você precisa ter o docker instalado, daí basta você acessar essa pasta pelo terminal e rodar o comando:
